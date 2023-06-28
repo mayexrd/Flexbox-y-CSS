@@ -1,0 +1,137 @@
+* 
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body 
+{
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor 
+{
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+	/*display: flex;
+	gap: 20px;*/
+	display: grid;
+	grid-template-columns: 3fr 1fr; /*define el numero y tamaño del grip, creando 2 columnas, el codigo dice que 3fr o la primera columna será 3 veces de ancho de la pagina, y 1fr es una parte de la pagina*/
+	gap: 20px;
+}
+
+.titulo 
+{
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-pizzas 
+{
+	/* width: 70%;
+	display: flex; /*divide las imagenes de manera horizontal*/
+	/*flex-wrap: wrap; /*pone los elementos segun se ajusten al espacio que tiene la página*/
+	/*gap: 20px;  /*define el espacio que debe haber entre cada elemento*/
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /*tamaño y cantidad de columnas, con el repeat se indica que se repetirá las instrucciones de que son 3 columnas del mismo tamaño*/
+	gap: 20px; /*separa las columnas*/
+}
+
+.card /*función para todas las imagenes de tipo de pizza*/
+{
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold; /*texto en negrita*/
+	padding: 20px; /*agrega 20px de espacio alrededor del elemento*/
+	position: relative; /*establece el tipo de posicion del elemento*/
+	overflow: hidden; /*esta propiedad especifica que hacer si el contenido de un elemento es demasiado grande, lo oculta, evitando que los demás elementos se desborden*/
+	background-size: cover; /*imagen de fondo, la hace más grande cubriendo toda la pagina*/
+	background-position: center center; /*posiciona la foto de fondo vertical en el centro*/
+	/*width: 33.33%;
+	width: calc(33.33% - 20px); /*restarle 20px del ancho del contenedor*/
+}
+
+.card .textos /*función para el texto de las 6 imagenes de tipos de pizza*/
+{
+	height: 100%;
+	/*display: flex;
+	flex-direction: column; /*hace que los elementos se apilen en columna*/
+	/*justify-content: space-between; /*el primer elemento va a estar en la parte superior, el ultimo elemento va a estar en la parte inferios y lo de en medio se proporciona en el centro*/
+
+	display: grid;
+	grid-template-rows: 1fr auto; /*define el tamaño de las filas, la primera fila tomará todo el espacio disponible y la fila auto tomará el espacio que ocupe*/
+}
+
+.banner /*funcion para la imagen de otros ingredientes*/
+{
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px; 
+	background-size: cover; 
+	background-position: center center;
+	/*width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;*/
+
+	display: grid;
+	grid-template-rows: auto auto auto; /*crea tres filas en nuestro grid, auto significa que el tamaño será de manera automatica, se adaptará segun al contenido de la palabra*/
+	align-items: center; /*centramos los items*/
+}
+
+.banner ul 
+{
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton 
+{
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+/*ayudan a adaptar */
+@media screen and (max-width: 900px) /*se establece que cuando el ancho de la pantalla sea igual o menor de 900px se aplica lo siguiente*/
+{
+	.contenedor 
+	{
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 700px) /*se establece que cuando el ancho de la pantalla sea igual o menor a 700px se aplican los siguientes estilos*/
+{
+	.card 
+	{
+		min-height: 160px; 
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width: 600px) /*si la pantalla es más pequeña se aplica automarticamente*/
+{
+	.banner
+	{
+		grid-template-rows: auto auto;
+	}
+}
